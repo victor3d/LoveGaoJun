@@ -25,6 +25,8 @@ $(function () {
     setInterval(function () {
         garden.render();
     }, Garden.options.growSpeed);
+    
+    $('#avatar1').animate({'backgroundColor':'#b9b900'}, 2000);
 });
 
 $(window).resize(function() {
