@@ -67,15 +67,17 @@ body {
 #rightPanel {
 	float: left;
 	width: 440px;
-	height: 500px;
+	height: 585px;
 }
 
 #avatar1 {
-	background-color: #b90000;
+	background: url("../images/xhr_1.png");
+	background-size: contain;
 }
 
 #avatar2 {
-	background-color: #ddbb00;
+	background: url("../images/xhr2.png");
+	background-size: contain;
 }
 
 #avatar3 {
@@ -93,8 +95,8 @@ body {
 .avatar {
 	float: left;
 	width: 80px;
-	height: 80px;
-	margin: 10px 0px 10px 0px;
+	height: 111px;
+	margin: 0px 0px 0px 0px;
 }
 
 #code {
