@@ -73,6 +73,7 @@ body {
 #avatar1 {
 	background: url("../images/xhr_1.png");
 	background-size: contain;
+	margin-left: 19px;
 }
 
 #avatar2 {
@@ -81,22 +82,24 @@ body {
 }
 
 #avatar3 {
-	background-color: #eeee00;
+	background: url("../images/xhr3.png");
+	background-size: contain;
 }
 
 #avatar4 {
-	background-color: #00ab00;
+	background: url("../images/xhr4.png");
+	background-size: contain;
 }
 
 #avatar5 {
-	background-color: #0000aa;
+	background: url("../images/xhr5.png");
+	background-size: contain;
 }
 
 .avatar {
 	float: left;
 	width: 80px;
 	height: 111px;
-	margin: 0px 0px 0px 0px;
 }
 
 #code {
