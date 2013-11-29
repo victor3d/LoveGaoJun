@@ -16,8 +16,8 @@ $(function () {
     gardenCtx.globalCompositeOperation = "lighter";
     garden = new Garden(gardenCtx, gardenCanvas);
 	
-	$("#content").css("width", $loveHeart.width() + $("#code").width());
-	$("#content").css("height", Math.max($loveHeart.height(), $("#code").height()));
+	$("#content").css("width", $loveHeart.width() + $("#rightPanel").width());
+	$("#content").css("height", Math.max($loveHeart.height(), $("#rightPanel").height()));
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
@@ -148,7 +148,7 @@ function adjustWordsPosition() {
 }
 
 function adjustCodePosition() {
-	$('#code').css("margin-top", ($("#garden").height() - $("#code").height()) / 2);
+	$('#rightPanel').css("margin-top", ($("#garden").height() - $("#rightPanel").height()) / 2);
 }
 
 function showLoveU() {

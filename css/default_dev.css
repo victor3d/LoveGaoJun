@@ -73,7 +73,7 @@ body {
 #avatar1 {
 	background: url("../images/xhr_1.png");
 	background-size: contain;
-	margin-left: 19px;
+	margin-left: 17px;
 }
 
 #avatar2 {
@@ -102,15 +102,22 @@ body {
 	height: 111px;
 }
 
-#code {
+#code_bg {
 	clear: left;
+	background: url("../images/letter_bg2.png") no-repeat;
+	background-size: contain;
 	width: 440px;
 	height: 474px;
+}
+
+#code {
+	clear: left;
+	width: 393px;
+	height: 414px;
 	color: #333;
 	font-family: "Consolas", "Monaco", "Bitstream Vera Sans Mono", "Courier New", "sans-serif";
-	font-size: 12px;
-	background: url("../images/letter_bg2.png");
-	background-size: contain;
+	font-size: 14px;
+	padding: 60px 0px 0px 47px;
 }
 
 #code .string{
