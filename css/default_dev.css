@@ -111,7 +111,6 @@ body {
 }
 
 #code {
-	clear: left;
 	width: 393px;
 	height: 414px;
 	color: #333;
@@ -120,25 +119,9 @@ body {
 	padding: 60px 0px 0px 47px;
 }
 
-#code .string{
-	color: #2a36ff;
-}
-
 #code .keyword{
 	color: #7f0055;
 	font-weight:bold;
-}
-
-#code .placeholder{
-	margin-left:15px;
-}
-
-#code .space{
-	margin-left:7px;
-}
-
-#code .comments{
-	color: #3f7f5f;
 }
 
 #copyright{

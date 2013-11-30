@@ -3,6 +3,24 @@ var $window = $(window), gardenCtx, gardenCanvas, $garden, garden;
 var clientWidth = $(window).width();
 var clientHeight = $(window).height();
 
+function avatarShowAnimation() {
+	$('#avatar1').hide();
+	$('#avatar2').hide();
+	$('#avatar3').hide();
+	$('#avatar4').hide();
+	$('#avatar5').hide();
+	
+	$('#avatar1').fadeIn(1000, function() {
+		$('#avatar2').fadeIn(1000, function() {
+			$('#avatar3').fadeIn(1000, function() {
+				$('#avatar4').fadeIn(1000, function(){
+					$('#avatar5').fadeIn(1000);
+				});
+			});
+		});
+	});
+}
+
 $(function () {
     // setup garden
 	$loveHeart = $("#loveHeart");
@@ -36,24 +54,6 @@ $(window).resize(function() {
         location.replace(location);
     }
 });
-
-function avatarShowAnimation() {
-	$('#avatar1').hide();
-	$('#avatar2').hide();
-	$('#avatar3').hide();
-	$('#avatar4').hide();
-	$('#avatar5').hide();
-	
-	$('#avatar1').fadeIn(1000, function() {
-		$('#avatar2').fadeIn(1000, function() {
-			$('#avatar3').fadeIn(1000, function() {
-				$('#avatar4').fadeIn(1000, function(){
-					$('#avatar5').fadeIn(1000);
-				});
-			});
-		});
-	});
-}
 
 function getHeartPoint(angle) {
 	var t = angle / Math.PI;
