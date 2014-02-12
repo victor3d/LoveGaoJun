@@ -21,30 +21,57 @@ function avatarShowAnimation() {
 	});
 }
 
-$(function () {
-    // setup garden
-	$loveHeart = $("#loveHeart");
-	var offsetX = $loveHeart.width() / 2;
-	var offsetY = $loveHeart.height() / 2 - 55;
-    $garden = $("#garden");
-    gardenCanvas = $garden[0];
-	gardenCanvas.width = $("#loveHeart").width();
-    gardenCanvas.height = $("#loveHeart").height()
-    gardenCtx = gardenCanvas.getContext("2d");
-    gardenCtx.globalCompositeOperation = "lighter";
-    garden = new Garden(gardenCtx, gardenCanvas);
-	
-	$("#content").css("width", $loveHeart.width() + $("#rightPanel").width());
-	$("#content").css("height", Math.max($loveHeart.height(), $("#rightPanel").height()));
+//$(function () {
+//    // setup garden
+//	$loveHeart = $("#loveHeart");
+//	var offsetX = $loveHeart.width() / 2;
+//	var offsetY = $loveHeart.height() / 2 - 55;
+//    $garden = $("#garden");
+//    gardenCanvas = $garden[0];
+//	gardenCanvas.width = $("#loveHeart").width();
+//    gardenCanvas.height = $("#loveHeart").height()
+//    gardenCtx = gardenCanvas.getContext("2d");
+//    gardenCtx.globalCompositeOperation = "lighter";
+//    garden = new Garden(gardenCtx, gardenCanvas);
+//	
+//	$("#content").css("width", $loveHeart.width() + $("#rightPanel").width());
+//	$("#content").css("height", Math.max($loveHeart.height(), $("#rightPanel").height()));
+//	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
+//	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
+//
+//    // renderLoop
+//    setInterval(function () {
+//        garden.render();
+//    }, Garden.options.growSpeed);
+//    
+//    avatarShowAnimation();
+//});
+
+
+$(function() {
+	$("#content").css("width", $("#leftPanel").width() + $("#rightPanel").width());
+	$("#content").css("height", Math.max($("#leftPanel").height(), $("#rightPanel").height()));
 	$("#content").css("margin-top", Math.max(($window.height() - $("#content").height()) / 2, 10));
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
-    // renderLoop
-    setInterval(function () {
-        garden.render();
-    }, Garden.options.growSpeed);
-    
-    avatarShowAnimation();
+	// masonry plugin call
+	$('#rightPanel').masonry({itemSelector : '.item'});
+	
+	//injecting arrow points
+	function Arrow_Points(){
+	  var s = $("#rightPanel").find(".item");
+	  $.each(s,function(i,obj){
+		var posLeft = $(obj).css("left");
+		if(posLeft == "0px"){
+		  html = "<span class='rightCorner'></span>";
+		  $(obj).prepend(html);
+		} else {
+		  html = "<span class='leftCorner'></span>";
+		  $(obj).prepend(html);
+		}
+	  });
+	}
+	Arrow_Points();
 });
 
 $(window).resize(function() {
@@ -148,7 +175,7 @@ function adjustWordsPosition() {
 }
 
 function adjustCodePosition() {
-	$('#rightPanel').css("margin-top", ($("#garden").height() - $("#rightPanel").height()) / 2);
+	$('#leftPanel').css("margin-top", ($("#garden").height() - $("#rightPanel").height()) / 2);
 }
 
 function showLoveU() {

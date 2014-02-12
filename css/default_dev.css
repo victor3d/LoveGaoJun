@@ -64,42 +64,10 @@ body {
 	display:none;
 }
 
-#rightPanel {
+#leftPanel {
 	float: left;
 	width: 440px;
 	height: 585px;
-}
-
-#avatar1 {
-	background: url("../images/xhr_1.png");
-	background-size: contain;
-	margin-left: 17px;
-}
-
-#avatar2 {
-	background: url("../images/xhr2.png");
-	background-size: contain;
-}
-
-#avatar3 {
-	background: url("../images/xhr3.png");
-	background-size: contain;
-}
-
-#avatar4 {
-	background: url("../images/xhr4.png");
-	background-size: contain;
-}
-
-#avatar5 {
-	background: url("../images/xhr5.png");
-	background-size: contain;
-}
-
-.avatar {
-	float: left;
-	width: 80px;
-	height: 111px;
 }
 
 #code_bg {

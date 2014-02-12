@@ -9,56 +9,35 @@
 			src: url('digital-7_mono.ttf') format("truetype");
 		}
 	</style>
-	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<link href="css/default_dev.css" type="text/css" rel="stylesheet">
+	<link href="css/timeline_dev.css" type="text/css" rel="stylesheet">
 	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="js/garden.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
+	<script type="text/javascript" src="js/flower.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
+    <script type="text/javascript" src="js/jquery.masonry.min.js"></script>
 </head>
 
 <body>
 	<div id="mainDiv">
 		<div id="content">
-			<div id="rightPanel">
-			    <div id="avatar1" class="avatar"></div>
-			    <div id="avatar2" class="avatar"></div>
-			    <div id="avatar3" class="avatar"></div>
-			    <div id="avatar4" class="avatar"></div>
-			    <div id="avatar5" class="avatar"></div>
-			    <div id="code_bg">
-			    	<div id="code">
-			    		有一个男孩叫仇兴中，就是我<br />
-			    		有一个女孩叫高君，也就是你<br />
-			    		2013年8月24日晚上我第一次遇见了你<br />
-			    		然后就喜欢上了<br />
-			    		小心翼翼的确认着你的心思，终于鼓起勇气像你表白<br />
-			    		非常幸运地，你接受了<br />
-			    		然后我们就在一起了<br />
-			    		华园弄，江洋畈，塘栖古镇，工大校园...留下了我们的足迹<br />
-			    		我相信那是走在通往幸福路上的脚步<br />
-			    		<br/>
-			    		<span class="keyword">与你牵手</span><br />
-			    		<span class="keyword">就像喝了一杯甜蜜的酒</span><br />
-			    		<span class="keyword">把一场春梦</span><br />
-			    		<span class="keyword">揉进月亮的心眼眼里头</span><br />
-			    		<span class="keyword">月儿走，我也走</span><br />
-			    		<span class="keyword">一路走到天尽头</span><br />
-			    		<span class="keyword">偷一缕彩霞</span><br />
-			    		<span class="keyword">好把大红的盖头织就</span><br />
-			    	</div>
-			    </div>
+			<div id="leftPanel">
+			    <canvas id="c"></canvas>
 			</div>
-			<div id="loveHeart">
-				<canvas id="garden"></canvas>
-				<div id="words">
-					<div id="messages">
-						高君，我们已经相识了
-						<div id="elapseClock"></div>
-					</div>
-					<div id="loveu">
-						这里是我们故事的起点<br/>
-						<div class="signature">- Victor.Qiu</div>
-					</div>
-				</div>
+			<div id="rightPanel" class="masonry">
+				<!-- E TimeLine导航 -->
+				<div class="timeline_container">
+			    	<div class="timeline">
+			      		<div class="plus"></div>
+			    	</div>
+			  	</div>
+			  	
+			  	<div class="item masonry-brick" style="position: absolute; top: 0px; left: 430px;">
+			  		<div class="inner">
+			  	        <h2><a href="http://sc.chinaz.com">专访苹果CEO，Tim Cook上任第一年</a></h2>
+			  	        <p>本文为Bloomberg BusinessweekTim Cooks Freshman Year: The Apple CEO Speaks一文的翻译，作者为Josh Tyrangiel。依照惯例，有心人士请直接观看原文。 早在 2011 年 10 月 5 日，Steve Jobs 辞世之前，他就已经确保了他长久以来信任的副手Tim Cook 能平稳地...</p>
+			  	        <p>本文为Bloomberg BusinessweekTim Cooks Freshman Year: The Apple CEO Speaks一文的翻译，作者为Josh Tyrangiel。依照惯例，有心人士请直接观看原文。 早在 2011 年 10 月 5 日，Steve Jobs 辞世之前，他就已经确保了他长久以来信任的副手Tim Cook 能平稳地...</p>
+			  	    </div>
+			  	</div>
 			</div>
 		</div>
 		<div id="copyright">
@@ -67,36 +46,26 @@
 		</div>
 	</div>
 	<script type="text/javascript">
-		var offsetX = $("#loveHeart").width() / 2;
-		var offsetY = $("#loveHeart").height() / 2 - 55;
-		var together = new Date();
-		together.setFullYear(2013, 7, 24);
-		together.setHours(18);
-		together.setMinutes(30);
-		together.setSeconds(0);
-		together.setMilliseconds(0);
-		
 		if (!document.createElement('canvas').getContext) {
 			var msg = document.createElement("div");
 			msg.id = "errorMsg";
 			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
 			document.body.appendChild(msg);
-			$("#code").css("display", "none")
+			//$("#code").css("display", "none")
 			$("#copyright").css("position", "absolute");
 			$("#copyright").css("bottom", "10px");
 		    document.execCommand("stop");
 		} else {
-			setTimeout(function () {
-				startHeartAnimation();
-			}, 5000);
-
-			timeElapse(together);
-			setInterval(function () {
-				timeElapse(together);
-			}, 500);
-
-			adjustCodePosition();
-			$("#code").typewriter();
+			var b = document.body;
+			var c = document.getElementsByTagName("canvas")[0];
+			var a = c.getContext("2d");
+			document.body.clientWidth;
+			
+			with(m=Math)C=cos,S=sin,P=pow,R=random;
+			c.width=c.height=f=500;
+			h=-250;
+			
+			setInterval('for(i=0;i<1e4;i++)if(s=p(R(),R(),i%46/.74)){z=s[2];x=~~(s[0]*f/z-h);y=~~(s[1]*f/z-h);if(!m[q=y*f+x]|m[q]>z)m[q]=z,a.fillStyle="rgb("+~(s[3]*h)+","+~(s[4]*h)+","+~(s[3]*s[3]*-80)+")",a.fillRect(x,y,1,1)}',0)
 		}
 	</script>
 </body>
