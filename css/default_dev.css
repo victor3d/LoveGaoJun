@@ -70,6 +70,16 @@ body {
 	height: 585px;
 }
 
+#rightPanel {float: left; width: 670px; height:670px;}
+
+#love_text {
+	background: url("../images/love.png") no-repeat;
+	background-size: contain;
+	margin: 5px 35px;
+	width: 600px;
+	height: 188px;
+}
+
 #code_bg {
 	clear: left;
 	background: url("../images/letter_bg2.png") no-repeat;

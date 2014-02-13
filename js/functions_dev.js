@@ -55,20 +55,20 @@ $(function() {
 	$("#content").css("margin-left", Math.max(($window.width() - $("#content").width()) / 2, 10));
 
 	// masonry plugin call
-	$('#rightPanel').masonry({itemSelector : '.item'});
+	$('#timeline_section').masonry({itemSelector : '.item'});
 	
 	//injecting arrow points
 	function Arrow_Points(){
-	  var s = $("#rightPanel").find(".item");
+	  var s = $("#timeline_section").find(".item");
 	  $.each(s,function(i,obj){
-		var posLeft = $(obj).css("left");
-		if(posLeft == "0px"){
-		  html = "<span class='rightCorner'></span>";
-		  $(obj).prepend(html);
-		} else {
+//		var posLeft = $(obj).css("left");
+//		if(posLeft == "0px"){
+//		  html = "<span class='rightCorner'></span>";
+//		  $(obj).prepend(html);
+//		} else {
 		  html = "<span class='leftCorner'></span>";
 		  $(obj).prepend(html);
-		}
+		//}
 	  });
 	}
 	Arrow_Points();
