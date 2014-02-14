@@ -72,6 +72,10 @@ $(function() {
 	  });
 	}
 	Arrow_Points();
+	
+	showLoveU();
+	
+	icecreamAnimation();
 });
 
 $(window).resize(function() {
@@ -180,4 +184,23 @@ function adjustCodePosition() {
 
 function showLoveU() {
 	$('#loveu').fadeIn(3000);
+}
+
+function icecreamAnimation() {
+	var start = new Date();
+	var finish = new Date().setTime(start.getTime()+5*1000);
+	var duration = finish - start;
+	
+	var interval = 100;
+	var vintervalID = setInterval(
+		function() {
+			var iElapsedMs = new Date() - start;
+			var iPerc = (iElapsedMs > 0) ? iElapsedMs/duration * 100 : 0;
+		
+			$('#icecream').css('height',iPerc+'%');
+		
+			if (iPerc >= 100){
+				clearInterval(vintervalID);
+			}
+	}, interval);
 }
